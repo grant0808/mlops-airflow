@@ -1,1 +1,3 @@
 .venv
+GCP_KEY_FILE.json
+models

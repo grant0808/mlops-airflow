@@ -9,24 +9,26 @@ from datetime import datetime, timedelta
 from airflow.models.dag import DAG
 
 # Operators; we need this to operate!
-from airflow.operators.python import PythonOperator
-from task.train import train
+from airflow.operators.python import PythonVirtualenvOperator
+from tasks.train import train
 
 with DAG(
-    "tutorial",
+    "train",
     default_args={
         "depends_on_past": False,
         "retries": 1,
         "retry_delay": timedelta(minutes=5),
     },
-    # [END default_args]
+    
     description="train",
     schedule=timedelta(days=30),
-    start_date=datetime(2021, 1, 1),
+    start_date=datetime(2025, 3, 28),
     catchup=False,
 ) as dag:
-    train_task = PythonOperator(
+    train_task = PythonVirtualenvOperator(
         task_id="train_task",
-        requirements=[],
+        requirements=["google-cloud-storage","scikit-learn", "pandas", "numpy", "torch"],
         python_callable=train
     )
+
+    train_task
