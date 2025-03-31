@@ -16,7 +16,7 @@ from tasks.eval import eval
 from tasks.is_model_drift import is_model_drift
 
 with DAG(
-    "eval Model",
+    "eval-Model",
     default_args={
         "depends_on_past": False,
         "retries": 1,
