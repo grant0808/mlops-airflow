@@ -10,6 +10,8 @@ def eval():
 
     from datetime import datetime
     import pytz
+
+    print("eval model ...")
     
     kst = pytz.timezone('Asia/Seoul')
     now = datetime.now(kst).strftime("%Y-%m-%d_%H%M%S")

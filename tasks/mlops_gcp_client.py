@@ -1,7 +1,5 @@
 from google.cloud import storage
 
-import os
-
 class MLOpsGCPClient(object):
     def __init__(self, bucket_name) -> None:
         self.client = storage.Client()

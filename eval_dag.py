@@ -10,7 +10,7 @@ from airflow.models.dag import DAG
 
 # Operators; we need this to operate!
 from airflow.operators.python import PythonVirtualenvOperator, ShortCircuitOperator
-from airflow.opreators.trigger_dagrun import TriggerDagRunOperator
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
 from tasks.train import eval
 from tasks.is_model_drift import is_model_drift

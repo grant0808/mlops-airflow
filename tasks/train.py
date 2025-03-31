@@ -11,6 +11,8 @@ def train():
     batch_size = 20
     learning_rate = 0.01
 
+    print('start training ...')
+
     generation = pd.read_csv("data/train/Plant_1_Generation_Data.csv")
     weather = pd.read_csv("data/train/Plant_1_Weather_Sensor_Data.csv")
 

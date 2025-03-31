@@ -5,6 +5,8 @@ def is_model_drift():
 
     DRAFT_THRESHOLD = 25
 
+    print("drift ...")
+
     anomalies_files = glob.glob("data/output/*_anomalies.csv")
     anomalies_files.sort(key=os.path.getmtime)
     print(anomalies_files)
