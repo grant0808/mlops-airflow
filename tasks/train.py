@@ -5,6 +5,10 @@ def train():
     import torch
     import torch.nn as nn
     from torch.utils.data import DataLoader, TensorDataset
+
+    import sys
+    import os
+    sys.path.append(os.path.join(os.path.dirname(__file__)))
     from mlops_gcp_client import MLOpsGCPClient
 
     epochs = 10

@@ -1,6 +1,4 @@
 def eval():
-    from mlops_gcp_client import MLOpsGCPClient
-    
     from sklearn.preprocessing import MinMaxScaler
     import pandas as pd
     import numpy as np
@@ -10,6 +8,12 @@ def eval():
 
     from datetime import datetime
     import pytz
+    
+    import sys
+    import os
+    sys.path.append(os.path.join(os.path.dirname(__file__)))
+    from mlops_gcp_client import MLOpsGCPClient
+    
 
     print("eval model ...")
     
