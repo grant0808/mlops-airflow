@@ -16,8 +16,8 @@ with DAG(
     "train",
     default_args={
         "depends_on_past": False,
-        "retries": 1,
-        "retry_delay": timedelta(minutes=5),
+        # "retries": 1,
+        # "retry_delay": timedelta(minutes=5),
     },
     
     description="train",
