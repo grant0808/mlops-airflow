@@ -10,7 +10,14 @@ from airflow.models.dag import DAG
 
 # Operators; we need this to operate!
 from airflow.operators.python import PythonVirtualenvOperator
+
+
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__)))
+
 from tasks.train import train
+
 
 with DAG(
     "train",
